@@ -1,0 +1,2 @@
+# GLPractice
+Practice of PyOpenGL
