@@ -9,6 +9,8 @@ def init():
 def drawFunc():
     glClear(GL_COLOR_BUFFER_BIT)
 
+    glRotatef(0.01, 0, 1, 0)
+
     glBegin(GL_LINES)
     glVertex2f(-1.0, 0.0)
     glVertex2f(1.0, 0.0)
@@ -38,12 +40,12 @@ def drawFunc():
     glPolygonMode(GL_FRONT, GL_LINE)
     glPolygonMode(GL_BACK, GL_FILL)
     glBegin(GL_POLYGON)
-    glVertex3f(-0.5, -0.1, 0)
-    glVertex3f(-0.8, -0.3, 0)
-    glVertex3f(-0.8, -0.6, 0)
-    glVertex3f(-0.5, -0.8, 0)
-    glVertex3f(-0.2, -0.6, 0)
-    glVertex3f(-0.2, -0.3, 0)
+    glVertex3f(-0.5, -0.1, -0.1)
+    glVertex3f(-0.8, -0.3, 0.1)
+    glVertex3f(-0.8, -0.6, -0.1)
+    glVertex3f(-0.5, -0.8, 0.1)
+    glVertex3f(-0.2, -0.6, -0.1)
+    glVertex3f(-0.2, -0.3, 0.1)
     glEnd()
 
     glPolygonMode(GL_FRONT, GL_FILL)
@@ -66,4 +68,5 @@ glutCreateWindow("Second")
 
 glutDisplayFunc(drawFunc)
 init()
+glutIdleFunc(drawFunc)
 glutMainLoop()
